@@ -1,0 +1,33 @@
+
+# 单库分表
+spring:
+  shardingsphere:
+    datasource:
+      names: tax
+      # datasoure名称
+      tax:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://10.1.1.151:3306/shardingJdbc-master?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&allowMultiQueries=true
+        password: test@DB
+        type: com.alibaba.druid.pool.DruidDataSource
+        username: test
+
+    sharding:
+      tables:
+        tax_report_data_storage:
+          actual-data-nodes: tax.tax_report_data_storage_$->{2019..2022}
+          #          key-generator:
+          #            column: id
+          #            props:
+          #              worker:
+          #                id: 123
+          #            type: UUID
+          # 分表策略
+          table-strategy:
+            standard:
+              sharding-column: task_id
+              precise-algorithm-class-name: com.dxhy.shardingsphere.config.TaxTestPreciseAlgorithm
+
+    props:
+      sql:
+        show: true

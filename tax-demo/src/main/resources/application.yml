@@ -1,0 +1,12 @@
+server:
+  port: 6001
+spring:
+  profiles:
+    active: @environment@
+
+mybatis-plus:
+  mapper-locations: classpath*:demoMapper/**/*.xml
+  configuration:
+    cache-enabled: false
+    call-setters-on-nulls: true
+    database-id: mysql
