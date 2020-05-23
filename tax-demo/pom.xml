@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.dxhy</groupId>
-        <artifactId>tax-researsh</artifactId>
+        <artifactId>tax-research</artifactId>
         <version>1.0.0</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
@@ -87,6 +87,12 @@
             <id>test</id>
             <properties>
                 <environment>test</environment>
+            </properties>
+        </profile>
+        <profile>
+            <id>pre</id>
+            <properties>
+                <environment>pre</environment>
             </properties>
         </profile>
     </profiles>

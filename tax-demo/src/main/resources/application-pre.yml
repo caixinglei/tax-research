@@ -1,15 +1,18 @@
-# 读写分离+分表
+# 分库+分表
 
 spring:
   shardingsphere:
+    props:
+      sql:
+        show: true
     #    masterslave:
     #      name: taxtest
     #      master-data-source-name: tax
     #      slave-data-source-names: tax1
     datasource:
-      names: tax,tax1
+      names: tax0,tax1
       # datasoure名称
-      tax:
+      tax0:
         driver-class-name: com.mysql.cj.jdbc.Driver
         url: jdbc:mysql://10.1.1.151:3306/shardingJdbc-master?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&allowMultiQueries=true
         password: test@DB
@@ -23,19 +26,15 @@ spring:
         username: test
 
     sharding:
-      master-slave-rules:
-        taxtest:
-          master-data-source-name: tax
-          slave-data-source-names: tax1
       # 默认datasoure名称
-      # default-data-source-name: tax
+      # default-data-source-name: tax0
       tables:
         tax_report_data_storage:
           database-strategy:
             standard:
               sharding-column: task_id
-                precise-algorithm-class-name: com.dxhy.shardingsphere.config.TaxTestPreciseAlgorithm
-          actual-data-nodes: taxtest.tax_report_data_storage_$->{2019..2022}
+              precise-algorithm-class-name: com.dxhy.shardingsphere.config.SeparateDbPreciseAlgorithm
+          actual-data-nodes: tax$->{0..1}.tax_report_data_storage_$->{2019..2020}
           #          key-generator:
           #            column: id
           #            props:
@@ -46,8 +45,4 @@ spring:
           table-strategy:
             standard:
               sharding-column: task_id
-              precise-algorithm-class-name: com.dxhy.shardingsphere.config.TaxTestPreciseAlgorithm
-      default-database-strategy:
-    props:
-      sql:
-        show: true
+              precise-algorithm-class-name: com.dxhy.shardingsphere.config.SeparateTablePreciseAlgorithm

@@ -8,4 +8,14 @@
         select * from test where id = #{taskId}
     </select>
 
+    <!-- 测试连表查询 -->
+    <select id="selectTaxReportDataStorageByJoin" resultType="java.util.Map">
+
+        select * from tax_report_data_storage tr left join test t on tr.task_id = t.id
+
+        where tr.summary_flag = 2
+
+    </select>
+
+
 </mapper>

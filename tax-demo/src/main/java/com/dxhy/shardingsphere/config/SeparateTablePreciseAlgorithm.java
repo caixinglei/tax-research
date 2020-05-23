@@ -17,7 +17,7 @@ import java.util.Objects;
 
 @Slf4j
 @Component
-public class TaxTestPreciseAlgorithm implements PreciseShardingAlgorithm<String>, ApplicationContextAware {
+public class SeparateTablePreciseAlgorithm implements PreciseShardingAlgorithm<String>, ApplicationContextAware {
     @Autowired
     private static ApplicationContext applicationContext;
 
@@ -27,7 +27,7 @@ public class TaxTestPreciseAlgorithm implements PreciseShardingAlgorithm<String>
         log.info("表集合------------------------------{}", collection);
         // 获取申报任务ID
         String taskId = preciseShardingValue.getValue();
-        log.info("分片键taskId---------------------{}", taskId);
+        log.info("分表分片键taskId---------------------{}", taskId);
         // 查询任务
 //        ShardingSphereDao shardingSphereDao = applicationContext.getBean("shardingSphereDao", ShardingSphereDao.class);
 //        TestEntity testEntity = shardingSphereDao.queryList(taskId);
@@ -36,7 +36,7 @@ public class TaxTestPreciseAlgorithm implements PreciseShardingAlgorithm<String>
 //        } else {
 //            return "tax_report_data_storage_2020";
 //        }
-        return "tax_report_data_storage_2020";
+        return "tax_report_data_storage_2019";
 
 
     }

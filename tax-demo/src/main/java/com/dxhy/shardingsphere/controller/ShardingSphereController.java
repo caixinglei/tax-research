@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("shardingSphere")
@@ -32,6 +33,7 @@ public class ShardingSphereController {
         return taxReportDataStorages;
 
     }
+
 
     @PostMapping("/insertTaxReportDataStorage")
     @ApiOperation("insertTaxReportDataStorage")
@@ -55,6 +57,15 @@ public class ShardingSphereController {
     public TestEntity dem4() {
 
         return shardingSphereDao.queryList("100");
+
+    }
+
+    @PostMapping("/selectTaxReportDataStorageByJoin")
+    @ApiOperation("selectTaxReportDataStorageByJoin")
+    public List<Map<String, Object>> demo5() {
+
+        List<Map<String, Object>> maps = shardingSphereService.selectTaxReportDataStorageByJoin();
+        return maps;
 
     }
 

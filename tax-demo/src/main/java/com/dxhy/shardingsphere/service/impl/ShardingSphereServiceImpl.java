@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class ShardingSphereServiceImpl implements ShardingSphereService {
@@ -48,5 +49,11 @@ public class ShardingSphereServiceImpl implements ShardingSphereService {
         TestEntity testEntity = new TestEntity();
         testEntity.setName("202010");
         testDao.insert(testEntity);
+    }
+
+
+    @Override
+    public List<Map<String, Object>> selectTaxReportDataStorageByJoin() {
+        return shardingSphereDao.selectTaxReportDataStorageByJoin();
     }
 }
