@@ -39,7 +39,14 @@ public class ShardingSphereController {
     @ApiOperation("insertTaxReportDataStorage")
     public void demo2() {
 
-        shardingSphereService.insertTaxReportDataStorage();
+        // shardingSphereService.insertTaxReportDataStorage();
+        TaxReportDataStorageEntity taxReportDataStorageEntity = new TaxReportDataStorageEntity();
+        taxReportDataStorageEntity.setTaskId("20");
+        taxReportDataStorageEntity.setValue("手写sql");
+        taxReportDataStorageEntity.setProvision("1");
+        taxReportDataStorageEntity.setSummaryFlag("3");
+        taxReportDataStorageEntity.setSpreadWorkbookTagId("234455");
+        shardingSphereDao.insertTaxReportDataStorage(taxReportDataStorageEntity);
 
     }
 

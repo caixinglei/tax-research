@@ -10,3 +10,6 @@ mybatis-plus:
     cache-enabled: false
     call-setters-on-nulls: true
     database-id: mysql
+#  global-config:
+#    db-config:
+#      id-type: none

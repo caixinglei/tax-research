@@ -14,6 +14,9 @@ public interface ShardingSphereDao extends BaseMapper<TaxReportDataStorageEntity
 
     TestEntity queryList(@Param("taskId") String taskId);
 
-
     List<Map<String, Object>> selectTaxReportDataStorageByJoin();
+
+    void insertTaxReportDataStorage(TaxReportDataStorageEntity taxReportDataStorageEntity);
+
+
 }

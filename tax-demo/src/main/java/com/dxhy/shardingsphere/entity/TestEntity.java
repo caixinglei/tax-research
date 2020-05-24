@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
+import java.util.UUID;
+
 
 @Data
 @TableName("test")
@@ -14,4 +16,9 @@ public class TestEntity {
     private String id;
 
     private String name;
+
+
+    public static void main(String[] args) {
+        System.out.println(UUID.randomUUID());
+    }
 }

@@ -2,6 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.dxhy.shardingsphere.dao.ShardingSphereDao">
+    <insert id="insertTaxReportDataStorage">
+        insert into tax_report_data_storage (task_id,value,summary_flag,spread_workbook_tag_id,provision)
+        values (#{taskId},#{value},#{summaryFlag},#{spreadWorkbookTagId},#{provision})
+    </insert>
 
 
     <select id="queryList" resultType="com.dxhy.shardingsphere.entity.TestEntity">

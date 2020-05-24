@@ -35,12 +35,11 @@ spring:
               sharding-column: task_id
               precise-algorithm-class-name: com.dxhy.shardingsphere.config.SeparateDbPreciseAlgorithm
           actual-data-nodes: tax$->{0..1}.tax_report_data_storage_$->{2019..2020}
-          #          key-generator:
-          #            column: id
-          #            props:
-          #              worker:
-          #                id: 123
-          #            type: UUID
+          key-generator:
+            column: id
+            #            props:
+            #              id: 123
+            type: UUID
           # 分表策略
           table-strategy:
             standard:
