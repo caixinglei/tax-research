@@ -7,9 +7,7 @@ import java.util.Properties;
 public class MyKeyGenerator implements ShardingKeyGenerator {
     @Override
     public Comparable<String> generateKey() {
-//        Sno wflake snowflake = IdUtil.createSnowflake(1, 1);
-//        Long id = snowflake.nextId();
-//        System.out.println("我自定义的id" + id);
+        // 这里写Id的生成逻辑
         System.out.println("自定义id进来了");
 
         return "20";

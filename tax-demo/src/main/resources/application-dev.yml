@@ -1,4 +1,4 @@
-# 单库分表
+# 单库+分表
 spring:
   shardingsphere:
     datasource:
@@ -25,7 +25,8 @@ spring:
           table-strategy:
             standard:
               sharding-column: task_id
-              precise-algorithm-class-name: com.dxhy.shardingsphere.config.SubTablePreciseAlgorithm
+              # 分表策略算法
+              precise-algorithm-class-name: com.dxhy.shardingsphere.config.SeparateTablePreciseAlgorithm
 
     props:
       sql:

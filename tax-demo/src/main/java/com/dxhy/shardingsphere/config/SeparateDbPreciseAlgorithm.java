@@ -2,7 +2,6 @@ package com.dxhy.shardingsphere.config;
 
 
 import lombok.extern.slf4j.Slf4j;
-import lombok.val;
 import org.apache.shardingsphere.api.sharding.standard.PreciseShardingAlgorithm;
 import org.apache.shardingsphere.api.sharding.standard.PreciseShardingValue;
 import org.springframework.beans.BeansException;
