@@ -30,13 +30,16 @@ public class SeparateTablePreciseAlgorithm implements PreciseShardingAlgorithm<S
         log.info("分表分片键taskId---------------------{}", taskId);
         // 查询任务
 //        ShardingSphereDao shardingSphereDao = applicationContext.getBean("shardingSphereDao", ShardingSphereDao.class);
+//        log.info("获取shardingSphereDao实例-------{}",shardingSphereDao);
 //        TestEntity testEntity = shardingSphereDao.queryList(taskId);
 //        if (Objects.equals(testEntity.getName(), "201908")) {
 //            return "tax_report_data_storage_2019";
 //        } else {
 //            return "tax_report_data_storage_2020";
 //        }
-        return "tax_report_data_storage_2019";
+        String tax_report_data_storage = "tax_report_data_storage_2019";
+
+        return tax_report_data_storage;
 
 
     }

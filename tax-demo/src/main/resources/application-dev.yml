@@ -27,7 +27,10 @@ spring:
               sharding-column: task_id
               # 分表策略算法
               precise-algorithm-class-name: com.dxhy.shardingsphere.config.SeparateTablePreciseAlgorithm
-
+    #            行表达式分片算法
+    #            inline:
+    #              sharding-column: task_id
+    #              algorithm-expression: tax_report_data_storage_$->{task_id % 2}
     props:
       sql:
         show: true
