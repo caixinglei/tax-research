@@ -15,10 +15,10 @@ import java.util.Map;
 @Service
 public class ShardingSphereServiceImpl implements ShardingSphereService {
 
-    @Autowired
+    // @Autowired
     private ShardingSphereDao shardingSphereDao;
 
-    @Autowired
+    // @Autowired
     private TestDao testDao;
 
     @Override
