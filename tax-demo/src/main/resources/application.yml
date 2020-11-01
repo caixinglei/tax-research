@@ -3,7 +3,6 @@ server:
 spring:
   profiles:
     active: @environment@
-
 mybatis-plus:
   mapper-locations: classpath*:demoMapper/**/*.xml
   configuration:
@@ -12,4 +11,8 @@ mybatis-plus:
     database-id: mysql
 #  global-config:
 #    db-config:
+logging:
+  file:
+    max-history:
+      
 #      id-type: none

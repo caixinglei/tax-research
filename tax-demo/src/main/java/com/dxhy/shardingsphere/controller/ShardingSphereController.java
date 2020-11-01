@@ -7,22 +7,27 @@ import com.dxhy.shardingsphere.service.ShardingSphereService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.context.WebApplicationContext;
 
+import javax.annotation.PreDestroy;
 import java.util.List;
 import java.util.Map;
 
 @RestController
 @RequestMapping("shardingSphere")
-@Api("分表")
+@Api(tags = "分表")
 public class ShardingSphereController {
 
     @Autowired
     private ShardingSphereService shardingSphereService;
-    @Autowired
+    // @Autowired
     private ShardingSphereDao shardingSphereDao;
+
 
 
     @PostMapping("/selectTaxReportDataStorage")
@@ -34,6 +39,12 @@ public class ShardingSphereController {
 
     }
 
+    @PreDestroy
+    public void destroy() {
+
+
+        System.out.printf("开始销毁----" + Thread.currentThread().getId());
+    }
 
     @PostMapping("/insertTaxReportDataStorage")
     @ApiOperation("insertTaxReportDataStorage")
@@ -54,8 +65,8 @@ public class ShardingSphereController {
     @PostMapping("/insertTest")
     @ApiOperation("insertTest")
     public void dem3() {
-
-        shardingSphereService.insertTest();
+        // applicationContext.close();
+        // shardingSphereService.insertTest();
 
     }
 
@@ -73,6 +84,31 @@ public class ShardingSphereController {
 
         List<Map<String, Object>> maps = shardingSphereService.selectTaxReportDataStorageByJoin();
         return maps;
+
+    }
+
+
+    public static void main(String[] args) {
+        String input = "bb aaaa cccccc sssss";
+        int max = 0;
+        int temp = 1;
+        for (int i = 1; i < input.length(); i++) {
+            char pre = input.charAt(i - 1);
+            char now = input.charAt(i);
+            if (now - pre == 0) {//如果是连续字符串，长度加一
+                temp++;
+            } else {
+                //如果不是连续的字符串，对之前连续的字符串长度进行判断，看是不是目前最长的，如果是则保存
+                //并且长度计算长度重新计为1
+                max = (max > temp ? max : temp);
+                temp = 1;
+            }
+        }
+        //因为上面的程序没有对最后一次连续长度进行比较，所以在这里额外比较一次
+        max = (max > temp ? max : temp);
+
+        //题目要求没有连续的输出0，即没有1这个说法，所以这里进行了判断
+        System.out.println((max == 1 ? 0 : max));
 
     }
 
