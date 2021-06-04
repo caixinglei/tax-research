@@ -45,7 +45,7 @@
         <org.apache.commons.commons-collections4.version>4.4</org.apache.commons.commons-collections4.version>
         <org.apache.poi.poi-ooxml.version>4.1.2</org.apache.poi.poi-ooxml.version>
         <org.apache.shiro.shiro-spring.version>1.5.3</org.apache.shiro.shiro-spring.version>
-        <org.apache.httpcomponents.httpclient.version>4.5.12</org.apache.httpcomponents.httpclient.version>
+        <org.apache.httpcomponents.httpclient.version>4.5.13</org.apache.httpcomponents.httpclient.version>
         <!-- 其它 -->
         <org.jsoup.version>1.13.1</org.jsoup.version>
         <com.deepoove.poi-tl.version>1.7.3</com.deepoove.poi-tl.version>
