@@ -47,7 +47,7 @@
         <org.apache.shiro.shiro-spring.version>1.5.3</org.apache.shiro.shiro-spring.version>
         <org.apache.httpcomponents.httpclient.version>4.5.12</org.apache.httpcomponents.httpclient.version>
         <!-- 其它 -->
-        <org.jsoup.version>1.13.1</org.jsoup.version>
+        <org.jsoup.version>1.14.2</org.jsoup.version>
         <com.deepoove.poi-tl.version>1.7.3</com.deepoove.poi-tl.version>
         <com.jcraft.jsch.version>0.1.55</com.jcraft.jsch.version>
         <com.itextpdf.version>5.5.13.1</com.itextpdf.version>
