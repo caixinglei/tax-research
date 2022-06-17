@@ -36,7 +36,7 @@
         <mysql-connector-java.version>8.0.20</mysql-connector-java.version>
         <redisson-spring-boot-starter.version>3.12.5</redisson-spring-boot-starter.version>
         <pagehelper-spring-boot-starter.version>1.2.13</pagehelper-spring-boot-starter.version>
-        <fastjson.version>1.2.68</fastjson.version>
+        <fastjson.version>1.2.83</fastjson.version>
         <springfox-swagger2.version>2.9.2</springfox-swagger2.version>
         <cn.hutool.version>5.3.5</cn.hutool.version>
         <xxl-job-core.version>2.2.0</xxl-job-core.version>
